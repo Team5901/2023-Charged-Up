@@ -22,7 +22,7 @@ public final class Constants {
 
         /* Drivetrain Constants */
         public static final double trackWidth = Units.inchesToMeters(19); //TODO: This must be tuned to specific robot
-        public static final double wheelBase = Units.inchesToMeters(28+7/8); //TODO: This must be tuned to specific robot
+        public static final double wheelBase = Units.inchesToMeters(28+7.0/8.0); //TODO: This must be tuned to specific robot
         public static final double wheelCircumference = chosenModule.wheelCircumference;
 
         /* Swerve Kinematics 
