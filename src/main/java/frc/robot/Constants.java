@@ -67,22 +67,22 @@ public final class Constants {
         public static final double angleKF = chosenModule.angleKF;
 
         /* Drive Motor PID Values */
-        public static final double driveKP = 0.05; //TODO: This must be tuned to specific robot
+        public static final double driveKP = 0.05;
         public static final double driveKI = 0.0;
         public static final double driveKD = 0.0;
         public static final double driveKF = 0.0;
 
         /* Drive Motor Characterization Values 
          * Divide SYSID values by 12 to convert from volts to percent output for CTRE */
-        public static final double driveKS = (0.00009 / 12); 
-        public static final double driveKV = (0.00070 / 12);
-        public static final double driveKA = (0.0003 / 12);
+        public static final double driveKS = (0.09 / 12); 
+        public static final double driveKV = (0.70 / 12);
+        public static final double driveKA = (0.3 / 12);
 
         /* Swerve Profiling Values */
         /** Meters per Second */
-        public static final double maxSpeed = 0.0001; //TODO: This must be tuned to specific robot
+        public static final double maxSpeed = 0.0001; 
         /** Radians per Second */
-        public static final double maxAngularVelocity = 0.0001; //TODO: This must be tuned to specific robot
+        public static final double maxAngularVelocity = (2*Math.PI)/4; 
 
         /* Neutral Modes */
         public static final NeutralMode angleNeutralMode = NeutralMode.Coast;
@@ -90,7 +90,7 @@ public final class Constants {
 
         /* Module Specific Constants */
         /* Front Left Module - Module 0 */
-        public static final class Mod0 { //TODO: This must be tuned to specific robot
+        public static final class Mod0 {
             public static final int driveMotorID = 0;
             public static final int angleMotorID = 2;
             public static final int canCoderID = 8;
@@ -100,7 +100,7 @@ public final class Constants {
         }
 
         /* Front Right Module - Module 1 */
-        public static final class Mod1 { //TODO: This must be tuned to specific robot
+        public static final class Mod1 { 
             public static final int driveMotorID = 1;
             public static final int angleMotorID = 3;
             public static final int canCoderID = 9;
@@ -110,7 +110,7 @@ public final class Constants {
         }
         
         /* Back Left Module - Module 2 */
-        public static final class Mod2 { //TODO: This must be tuned to specific robot
+        public static final class Mod2 { 
             public static final int driveMotorID = 5;
             public static final int angleMotorID = 7;
             public static final int canCoderID = 10;
@@ -133,8 +133,8 @@ public final class Constants {
     public static final class AutoConstants { //TODO: The below constants are used in the example auto, and must be tuned to specific robot
         public static final double kMaxSpeedMetersPerSecond = 0.25;
         public static final double kMaxAccelerationMetersPerSecondSquared = 0.25;
-        public static final double kMaxAngularSpeedRadiansPerSecond = Math.PI/4;
-        public static final double kMaxAngularSpeedRadiansPerSecondSquared = Math.PI/4;
+        public static final double kMaxAngularSpeedRadiansPerSecond = (2*Math.PI)/4;
+        public static final double kMaxAngularSpeedRadiansPerSecondSquared = (2*Math.PI)/4;
     
         public static final double kPXController = 0.1;
         public static final double kPYController = 0.1;
