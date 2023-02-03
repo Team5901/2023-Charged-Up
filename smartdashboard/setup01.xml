@@ -74,7 +74,7 @@
 		<height>19</height>
 	</widget>
 	<widget field="Mod 0 Integrated" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
-		<location x="7" y="31"/>
+		<location x="8" y="29"/>
 	</widget>
 	<widget field="Mod 2 Cancoder" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
 		<location x="188" y="94"/>
@@ -93,6 +93,10 @@
 	</widget>
 	<widget field="Mod 1 Integrated" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
 		<location x="182" y="28"/>
+	</widget>
+	<widget field="maxspeed" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="376" y="10"/>
+		<height>26</height>
 	</widget>
 </dashboard>
 <live-window>
