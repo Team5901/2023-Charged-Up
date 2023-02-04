@@ -17,12 +17,12 @@ public final class Constants {
         public static final int pigeonID = 1;
         public static final boolean invertGyro = true; // Always ensure Gyro is CCW+ CW-
 
-        public static final COTSFalconSwerveConstants chosenModule =  //TODO: This must be tuned to specific robot
+        public static final COTSFalconSwerveConstants chosenModule =  
             COTSFalconSwerveConstants.SDSMK4i(COTSFalconSwerveConstants.driveGearRatios.SDSMK4i_L2);
 
         /* Drivetrain Constants */
-        public static final double trackWidth = Units.inchesToMeters(19); //TODO: This must be tuned to specific robot
-        public static final double wheelBase = Units.inchesToMeters(28.875); //TODO: This must be tuned to specific robot
+        public static final double trackWidth = Units.inchesToMeters(19); 
+        public static final double wheelBase = Units.inchesToMeters(28.875); 
         public static final double wheelCircumference = chosenModule.wheelCircumference;
 
         /* Swerve Kinematics 
@@ -80,10 +80,11 @@ public final class Constants {
 
         /* Swerve Profiling Values */
         /** Meters per Second */
-        public static final double maxSpeed = 0.0001; 
+        public static final double maxSpeed = 1; 
         /** Radians per Second */
         public static final double maxAngularVelocity = (2*Math.PI)/4; 
-
+        //maximum *decimal*, 0 to 1 throttle to clamp to in swervemodule.java
+        public static final double maxOpenLoopThrottle = 0.2; 
         /* Neutral Modes */
         public static final NeutralMode angleNeutralMode = NeutralMode.Coast;
         public static final NeutralMode driveNeutralMode = NeutralMode.Brake;
@@ -130,7 +131,19 @@ public final class Constants {
         }
     }
 
-    public static final class AutoConstants { //TODO: The below constants are used in the example auto, and must be tuned to specific robot
+    //Motors other than the drive system
+    public static final class Actuators {
+        public static final class Neo0 {
+        }
+
+        public static final class Neo1 {
+        }
+
+        public static final class Neo2 {
+        }
+    }
+
+    public static final class AutoConstants { 
         public static final double kMaxSpeedMetersPerSecond = 0.25;
         public static final double kMaxAccelerationMetersPerSecondSquared = 0.25;
         public static final double kMaxAngularSpeedRadiansPerSecond = (2*Math.PI)/4;

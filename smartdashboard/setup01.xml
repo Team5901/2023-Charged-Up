@@ -55,7 +55,7 @@
 		<location x="0" y="176"/>
 	</widget>
 	<widget field="SysIdVoltageCommand" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
-		<location x="0" y="156"/>
+		<location x="173" y="181"/>
 	</widget>
 	<widget field="Mod 3 Cancoder" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
 		<location x="16" y="92"/>
@@ -97,6 +97,12 @@
 	<widget field="maxspeed" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
 		<location x="376" y="10"/>
 		<height>26</height>
+	</widget>
+	<widget field="Auto Selector" type="String" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="374" y="51"/>
+	</widget>
+	<widget field="gyroyaw" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="404" y="89"/>
 	</widget>
 </dashboard>
 <live-window>
