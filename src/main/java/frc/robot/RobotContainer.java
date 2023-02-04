@@ -30,14 +30,16 @@ public class RobotContainer {
     /* Driver Buttons */
     private final JoystickButton zeroGyro = new JoystickButton(driver, XboxController.Button.kY.value);
     private final JoystickButton robotCentric = new JoystickButton(driver, XboxController.Button.kLeftBumper.value);
-    
+    private final JoystickButton elevator = new JoystickButton(driver, XboxController.Button.kA.value);
+
     /* Subsystems */
     private final Swerve s_Swerve = new Swerve();
-    //private final SparkMax s_max = new SparkMax();
+    private final SparkMax s_max = new SparkMax();
 
 
     /** The container for the robot. Contains subsystems, OI devices, and commands. */
     public RobotContainer() {
+
         s_Swerve.setDefaultCommand(
             new TeleopSwerve(
                 s_Swerve, 
@@ -46,13 +48,21 @@ public class RobotContainer {
                 () -> -driver.getRawAxis(rotationAxis), 
                 () -> robotCentric.getAsBoolean()
             )
-        );
+        
+            
 
+
+        );
+        s_max.setDefaultCommand(
+            new TeleopElevator(teleopMax()
+            )
+        );
+        
         // Configure the button bindings
         configureButtonBindings();
         //s_max.maxInit();
     }
-
+    // https://docs.wpilib.org/en/stable/docs/software/commandbased/structuring-command-based-project.html
     /**
      * Use this method to define your button->command mappings. Buttons can be created by
      * instantiating a {@link GenericHID} or one of its subclasses ({@link
@@ -62,6 +72,7 @@ public class RobotContainer {
     private void configureButtonBindings() {
         /* Driver Buttons */
         zeroGyro.onTrue(new InstantCommand(() -> s_Swerve.zeroGyro()));
+        elevator.onTrue(new InstantCommand(() -> ))
     }
 
     /**
