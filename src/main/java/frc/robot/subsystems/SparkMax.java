@@ -2,6 +2,7 @@ package frc.robot.subsystems;
 
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+import frc.robot.Constants;
 
 import com.revrobotics.RelativeEncoder;
 import com.revrobotics.SparkMaxPIDController;
@@ -14,7 +15,7 @@ public class SparkMax extends TimedRobot {
   public SparkMaxPIDController m_pidController;
   private RelativeEncoder m_encoder;
   public double kP, kI, kD, kIz, kFF, kMaxOutput, kMinOutput;
-
+  private boolean elevatorState =false;
   //@Override
   public void maxInit() {
     // initialize motor
@@ -75,7 +76,7 @@ public class SparkMax extends TimedRobot {
     // double ff = SmartDashboard.getNumber("Feed Forward", 0);
     // double max = SmartDashboard.getNumber("Max Output", 0);
     // double min = SmartDashboard.getNumber("Min Output", 0);
-    // double rotations = SmartDashboard.getNumber("Set Rotations", 0);
+     double rotations = SmartDashboard.getNumber("Set Rotations", 0);
 
     // // if PID coefficients on SmartDashboard have changed, write new values to controller
     // if((p != kP)) { m_pidController.setP(p); kP = p; }
@@ -108,5 +109,12 @@ public class SparkMax extends TimedRobot {
     
     SmartDashboard.putNumber("SetPoint", rotations);
     SmartDashboard.putNumber("ProcessVariable", m_encoder.getPosition());
+  }
+  public void elevate(){
+
+     double rotations = elevatorState ? Constants.SparkMax.top : Constants.SparkMax.bottom;
+    m_pidController.setReference(rotations, CANSparkMax.ControlType.kPosition);
+    elevatorState=!elevatorState;
+
   }
 }

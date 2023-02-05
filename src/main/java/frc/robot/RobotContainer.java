@@ -6,6 +6,7 @@ import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.InstantCommand;
+import edu.wpi.first.wpilibj2.command.Subsystem;
 import edu.wpi.first.wpilibj2.command.button.JoystickButton;
 
 import frc.robot.autos.*;
@@ -48,15 +49,16 @@ public class RobotContainer {
                 () -> -driver.getRawAxis(rotationAxis), 
                 () -> robotCentric.getAsBoolean()
             )
-        
-            
+        );
 
 
-        );
-        s_max.setDefaultCommand(
-            new TeleopElevator(teleopMax()
-            )
-        );
+        // s_max.setDefaultCommand(
+        //     new TeleopElevator(
+        //         s_max,
+        //         () -> -elevator.getAsBoolean()
+        //     //teleopMax()
+        //     )
+        //);
         
         // Configure the button bindings
         configureButtonBindings();
@@ -72,7 +74,9 @@ public class RobotContainer {
     private void configureButtonBindings() {
         /* Driver Buttons */
         zeroGyro.onTrue(new InstantCommand(() -> s_Swerve.zeroGyro()));
-        elevator.onTrue(new InstantCommand(() -> ))
+
+        //Toggle elevator position from top to bottom
+        elevator.onTrue(new InstantCommand(() -> s_max.elevate()));
     }
 
     /**
