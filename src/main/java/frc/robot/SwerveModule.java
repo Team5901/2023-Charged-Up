@@ -59,7 +59,7 @@ public class SwerveModule {
             double percentOutput = desiredState.speedMetersPerSecond / Constants.Swerve.maxSpeed;
             
             
-            percentOutput=clamp(percentOutput,Constants.Swerve.maxOpenLoopThrottle *-1,Constants.Swerve.maxOpenLoopThrottle);
+            percentOutput=clamp(percentOutput,Constants.Swerve.maxOpenLoopThrottle *-1,Constants.Swerve.maxOpenLoopThrottle);// reduce open loop throttle to a reasonable number becasue desiredState speed is too much
             SmartDashboard.putNumber("Throttle %",percentOutput*100);
             mDriveMotor.set(ControlMode.PercentOutput, percentOutput);
         }
