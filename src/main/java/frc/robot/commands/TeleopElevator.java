@@ -12,6 +12,11 @@ import edu.wpi.first.wpilibj2.command.CommandBase;
 
 
 
+import com.revrobotics.RelativeEncoder;
+import com.revrobotics.SparkMaxAbsoluteEncoder;
+import com.revrobotics.SparkMaxPIDController;
+import com.revrobotics.CANSparkMax;
+
 
 
 
@@ -26,7 +31,10 @@ private SparkMax sMax;
 
 
 }
-
+    public double getCurrentEncoder() {
+        
+        return 100d;
+    }
 
 
 }
