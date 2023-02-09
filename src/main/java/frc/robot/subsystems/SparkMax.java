@@ -10,7 +10,7 @@ import com.revrobotics.CANSparkMax;
 import com.revrobotics.CANSparkMaxLowLevel.MotorType;
 
 public class SparkMax extends TimedRobot {
-  private static final int deviceID = 1;
+  private static final int deviceID = 12;
   private CANSparkMax m_motor;
   public SparkMaxPIDController m_pidController;
   private RelativeEncoder m_encoder;
@@ -110,11 +110,26 @@ public class SparkMax extends TimedRobot {
     SmartDashboard.putNumber("SetPoint", rotations);
     SmartDashboard.putNumber("ProcessVariable", m_encoder.getPosition());
   }
-  public void elevate(){
 
-     double rotations = elevatorState ? Constants.SparkMax.top : Constants.SparkMax.bottom;
-    m_pidController.setReference(rotations, CANSparkMax.ControlType.kPosition);
-    elevatorState=!elevatorState;
+  //Toggle elevator from bottom to top
+  public void elevate(double position) {
+    //Get initial postion top/bottom
+    double current_rotations = m_encoder.getPosition();
+
+    //Command it to move to other position
+    double max_rotations = 5;
+    double min_rotations = 0;
+    //todo check that request does not exceed max or min
+
+
+  //   if (current_rotations == 0) {
+  //     m_pidController.setReference(max_rotations, CANSparkMax.ControlType.kPosition);
+  //   }
+  //   else if (current_rotations == 5) {
+  //   m_pidController.setReference(min_rotations, CANSparkMax.ControlType.kPosition);
+  //   } 
+  m_pidController.setReference(position, CANSparkMax.ControlType.kPosition);
 
   }
+
 }

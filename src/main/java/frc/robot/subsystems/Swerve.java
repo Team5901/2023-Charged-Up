@@ -27,7 +27,7 @@ public class Swerve extends SubsystemBase {
     AHRS ahrs;
 
     public Swerve() {
-        //gyro = new Pigeon2(Constants.Swerve.pigeonID);
+        
         ahrs = new AHRS(SerialPort.Port.kUSB);//edu.wpi.first.wpilibj.SerialPort.Port
         
         

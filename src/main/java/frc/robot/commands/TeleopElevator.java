@@ -2,7 +2,7 @@ package frc.robot.commands;
 
 
 import frc.robot.subsystems.SparkMax;
-
+ 
 
 import java.util.function.BooleanSupplier;
 
@@ -19,7 +19,7 @@ import com.revrobotics.CANSparkMax;
 
 
 
-
+    
 public class TeleopElevator extends CommandBase {
 private SparkMax sMax;
 // private BooleanSupplier elevatorButton;
@@ -37,4 +37,4 @@ private SparkMax sMax;
     }
 
 
-}
+ }

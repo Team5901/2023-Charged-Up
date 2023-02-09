@@ -30,7 +30,8 @@ public class RobotContainer {
     /* Driver Buttons */
     private final JoystickButton zeroGyro = new JoystickButton(driver, XboxController.Button.kY.value);
     private final JoystickButton robotCentric = new JoystickButton(driver, XboxController.Button.kLeftBumper.value);
-    private final JoystickButton elevator = new JoystickButton(driver, XboxController.Button.kA.value);
+    private final JoystickButton elevatorPos1 = new JoystickButton(driver, XboxController.Button.kA.value);
+    private final JoystickButton elevatorPos2 = new JoystickButton(driver, XboxController.Button.kB.value);
 
     /* Subsystems */
     private final Swerve s_Swerve = new Swerve();
@@ -75,7 +76,9 @@ public class RobotContainer {
         zeroGyro.onTrue(new InstantCommand(() -> s_Swerve.zeroGyro()));
 
         //Toggle elevator position from top to bottom
-        elevator.onTrue(new InstantCommand(() -> s_max.elevate()));
+        elevatorPos1.onTrue(new InstantCommand(() -> s_max.elevate(0)));
+        elevatorPos2.onTrue(new InstantCommand(() -> s_max.elevate(100)));
+
     }
 
     /**
