@@ -55,10 +55,10 @@ public class RobotContainer {
         // s_max.setDefaultCommand(
         //     new TeleopElevator(
         //         s_max,
-        //         () -> -elevator.getAsBoolean()
-        //     //teleopMax()
+        //         () -> elevatorPos1.getAsBoolean()
+            
         //     )
-        //);
+        // );
         
         // Configure the button bindings
         s_max.maxInit();
@@ -77,8 +77,8 @@ public class RobotContainer {
         zeroGyro.onTrue(new InstantCommand(() -> s_Swerve.zeroGyro()));
 
         //Toggle elevator position from top to bottom
-        elevatorPos1.onTrue(new InstantCommand(() -> s_max.elevate(0)));
-        elevatorPos2.onTrue(new InstantCommand(() -> s_max.elevate(100)));
+        elevatorPos1.onTrue(new InstantCommand(() -> s_max.extend(0d)));
+        elevatorPos2.onTrue(new InstantCommand(() -> s_max.extend(100d)));
 
     }
 

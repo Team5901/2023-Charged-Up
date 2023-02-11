@@ -137,13 +137,48 @@ public final class Constants {
 
     //Motors other than the drive system
     public static final class Actuators {
+        //Elevator Extender Motor
         public static final class Neo0 {
-        }
+            public static final int deviceID = 12;
+            public static final int min = 0;
+            public static final int max = 100;
 
+            public static final double kP = 0.1; 
+            public static final double kI = 1e-4;
+            public static final double kD = 1; 
+            public static final double kIz = 0; 
+            public static final double kFF = 0; 
+            public static final double kMaxOutput = 1; 
+            public static final double kMinOutput = -1;
+
+        }
+        //Elevator Rotor Motor
         public static final class Neo1 {
-        }
+            public static final int deviceID = 13;
+            public static final int min = 0;
+            public static final int max = 100;
 
+            public static final double kP = 0.1; 
+            public static final double kI = 1e-4;
+            public static final double kD = 1; 
+            public static final double kIz = 0; 
+            public static final double kFF = 0; 
+            public static final double kMaxOutput = 1; 
+            public static final double kMinOutput = -1;
+        }
+        //Grabber motor
         public static final class Neo2 {
+            public static final int deviceID = 14;
+            public static final int min = 0;
+            public static final int max = 100;
+
+            public static final double kP = 0.1; 
+            public static final double kI = 1e-4;
+            public static final double kD = 1; 
+            public static final double kIz = 0; 
+            public static final double kFF = 0; 
+            public static final double kMaxOutput = 1; 
+            public static final double kMinOutput = -1;
         }
     }
 

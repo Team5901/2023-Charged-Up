@@ -50,16 +50,16 @@ public class SwerveModule {
         setAngle(desiredState);
         setSpeed(desiredState, isOpenLoop);
     }
-    public static double clamp(double val, double min, double max) {
-        return Math.max(min, Math.min(max, val));
-    }
+    // public static double clamp(double val, double min, double max) {
+    //     return Math.max(min, Math.min(max, val));
+    // }
 
     private void setSpeed(SwerveModuleState desiredState, boolean isOpenLoop){
         if(isOpenLoop){
             double percentOutput = desiredState.speedMetersPerSecond / Constants.Swerve.maxSpeed;
             
             
-            percentOutput=clamp(percentOutput,Constants.Swerve.maxOpenLoopThrottle *-1,Constants.Swerve.maxOpenLoopThrottle);// reduce open loop throttle to a reasonable number becasue desiredState speed is too much
+            percentOutput=percentOutput*Constants.Swerve.maxOpenLoopThrottle; // reduce open loop throttle to a reasonable number becasue desiredState speed is too much
             SmartDashboard.putNumber("Throttle %",percentOutput*100);
             mDriveMotor.set(ControlMode.PercentOutput, percentOutput);
         }
