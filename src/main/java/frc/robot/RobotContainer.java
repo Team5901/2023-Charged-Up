@@ -61,8 +61,9 @@ public class RobotContainer {
         //);
         
         // Configure the button bindings
+        s_max.maxInit();
         configureButtonBindings();
-        //s_max.maxInit();
+        
     }
     // https://docs.wpilib.org/en/stable/docs/software/commandbased/structuring-command-based-project.html
     /**
