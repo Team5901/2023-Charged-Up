@@ -129,4 +129,13 @@ public class SparkMax extends TimedRobot {
     public void extend(double pos){
       em_pidController.setReference(pos, CANSparkMax.ControlType.kPosition);
     }
+    // public double square_a_number(double input){
+    //   return input*input;
+    // }
+
+
+    // double out = square_a_number(2);
+
+    
+    
 }

@@ -78,7 +78,7 @@ public class RobotContainer {
 
         //Toggle elevator position from top to bottom
         elevatorPos1.onTrue(new InstantCommand(() -> s_max.extend(0d)));
-        elevatorPos2.onTrue(new InstantCommand(() -> s_max.extend(100d)));
+        elevatorPos2.onTrue(new InstantCommand(() -> s_max.extend(5d)));
 
     }
 
