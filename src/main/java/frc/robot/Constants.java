@@ -49,20 +49,20 @@ public final class Constants {
         public static final boolean canCoderInvert = chosenModule.canCoderInvert;
 
         /* Swerve Current Limiting */
-        public static final int angleContinuousCurrentLimit = 15;
-        public static final int anglePeakCurrentLimit = 20;
+        public static final int angleContinuousCurrentLimit = 35;
+        public static final int anglePeakCurrentLimit = 45;
         public static final double anglePeakCurrentDuration = 0.1;
         public static final boolean angleEnableCurrentLimit = true;
 
-        public static final int driveContinuousCurrentLimit = 10;
-        public static final int drivePeakCurrentLimit = 20;
+        public static final int driveContinuousCurrentLimit = 35;
+        public static final int drivePeakCurrentLimit = 45;
         public static final double drivePeakCurrentDuration = 0.1;
         public static final boolean driveEnableCurrentLimit = true;
 
         /* These values are used by the drive falcon to ramp in open loop and closed loop driving.
          * We found a small open loop ramp (0.25) helps with tread wear, tipping, etc */
         public static final double openLoopRamp = 0.5;
-        public static final double closedLoopRamp = 1;
+        public static final double closedLoopRamp = 0.5;
 
         /* Angle Motor PID Values */
         public static final double angleKP = chosenModule.angleKP;
@@ -84,9 +84,9 @@ public final class Constants {
 
         /* Swerve Profiling Values */
         /** Meters per Second */
-        public static final double maxSpeed = 10; 
+        public static final double maxSpeed = 4; 
         /** Radians per Second */
-        public static final double maxAngularVelocity = (2*Math.PI)/2; 
+        public static final double maxAngularVelocity = (2*Math.PI)//1; 
         //maximum *decimal*, 0 to 1 throttle to clamp to in swervemodule.java
         public static final double maxOpenLoopThrottle = 0.2; 
         /* Neutral Modes */
@@ -94,8 +94,9 @@ public final class Constants {
         public static final NeutralMode driveNeutralMode = NeutralMode.Brake;
 
         /* Module Specific Constants */
-        /* Front Left Module - Module 0 */
-        public static final class Mod0 {
+        
+           /* Back Right Module - Module 3 */
+        public static final class Mod3 {
             public static final int driveMotorID = 0;
             public static final int angleMotorID = 2;
             public static final int canCoderID = 8;
@@ -104,8 +105,9 @@ public final class Constants {
                 new SwerveModuleConstants(driveMotorID, angleMotorID, canCoderID, angleOffset);
         }
 
-        /* Front Right Module - Module 1 */
-        public static final class Mod1 { 
+        
+        /* Back Left Module - Module 2 */
+        public static final class Mod2 { 
             public static final int driveMotorID = 1;
             public static final int angleMotorID = 3;
             public static final int canCoderID = 9;
@@ -114,8 +116,9 @@ public final class Constants {
                 new SwerveModuleConstants(driveMotorID, angleMotorID, canCoderID, angleOffset);
         }
         
-        /* Back Left Module - Module 2 */
-        public static final class Mod3 { 
+        
+        /* Front Left Module - Module 0 */
+        public static final class Mod0 { 
             public static final int driveMotorID = 5;
             public static final int angleMotorID = 7;
             public static final int canCoderID = 10;
@@ -124,8 +127,8 @@ public final class Constants {
                 new SwerveModuleConstants(driveMotorID, angleMotorID, canCoderID, angleOffset);
         }
 
-        /* Back Right Module - Module 3 */
-        public static final class Mod2 {
+        /* Front Right Module - Module 1 */
+        public static final class Mod1 {
             public static final int driveMotorID = 6;
             public static final int angleMotorID = 4;
             public static final int canCoderID = 11;

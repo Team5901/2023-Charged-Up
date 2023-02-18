@@ -31,12 +31,13 @@ public class RobotContainer {
     private final int translationAxis = Joystick.AxisType.kY.value;
     private final int strafeAxis = Joystick.AxisType.kX.value;
     private final int rotationAxis = Joystick.AxisType.kZ.value;
-
+    private final int throttleAxis = Joystick.AxisType.kTwist.value;
     /* Driver Buttons */
     private final JoystickButton zeroGyro = new JoystickButton(driver, 8  );
     private final JoystickButton robotCentric = new JoystickButton(driver, 7);
     private final JoystickButton elevatorPos1 = new JoystickButton(driver, 3);
     private final JoystickButton elevatorPos2 = new JoystickButton(driver, 4);
+    private final JoystickButton calibrate = new JoystickButton(driver,12);
 
     /* Subsystems */
     private final Swerve s_Swerve = new Swerve();
@@ -84,6 +85,7 @@ public class RobotContainer {
         //Toggle elevator position from top to bottom
         elevatorPos1.onTrue(new InstantCommand(() -> s_max.extend(0d)));
         elevatorPos2.onTrue(new InstantCommand(() -> s_max.extend(5d)));
+        calibrate.onTrue(new InstantCommand( () -> s_Swerve.calibrategyro()));
 
     }
 

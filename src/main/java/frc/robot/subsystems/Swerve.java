@@ -53,7 +53,7 @@ public class Swerve extends SubsystemBase {
 
     public void drive(Translation2d translation, double rotation, boolean fieldRelative, boolean isOpenLoop) {
         //SmartDashboard.putNumber("maxspeed",Constants.Swerve.maxSpeed);
-        SmartDashboard.putNumber("gyroyaw",ahrs.getYaw());
+        SmartDashboard.putNumber("gyroyaw",getYaw().getDegrees());
         SwerveModuleState[] swerveModuleStates =
             Constants.Swerve.swerveKinematics.toSwerveModuleStates(
                 fieldRelative ? ChassisSpeeds.fromFieldRelativeSpeeds(
@@ -109,6 +109,10 @@ public class Swerve extends SubsystemBase {
 
     public void zeroGyro(){
         ahrs.zeroYaw();
+    }
+
+    public void calibrategyro() {
+        ahrs.calibrate();
     }
 
     public Rotation2d getYaw() {
