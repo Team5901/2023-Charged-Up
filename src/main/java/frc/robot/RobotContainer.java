@@ -2,7 +2,10 @@ package frc.robot;
 
 import edu.wpi.first.wpilibj.GenericHID;
 import edu.wpi.first.wpilibj.Joystick;
-import edu.wpi.first.wpilibj.XboxController;
+import edu.wpi.first.wpilibj.Joystick.ButtonType;
+//import edu.wpi.first.wpilibj.XboxController;
+//import edu.wpi.first.wpilibj.PS4Controller.Button;
+import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.InstantCommand;
 
@@ -21,17 +24,19 @@ import frc.robot.subsystems.*;
 public class RobotContainer {
     /* Controllers */
     private final Joystick driver = new Joystick(0);
-
+    
     /* Drive Controls */
-    private final int translationAxis = XboxController.Axis.kLeftY.value;
-    private final int strafeAxis = XboxController.Axis.kLeftX.value;
-    private final int rotationAxis = XboxController.Axis.kRightX.value;
+
+
+    private final int translationAxis = Joystick.AxisType.kY.value;
+    private final int strafeAxis = Joystick.AxisType.kX.value;
+    private final int rotationAxis = Joystick.AxisType.kZ.value;
 
     /* Driver Buttons */
-    private final JoystickButton zeroGyro = new JoystickButton(driver, XboxController.Button.kY.value);
-    private final JoystickButton robotCentric = new JoystickButton(driver, XboxController.Button.kLeftBumper.value);
-    private final JoystickButton elevatorPos1 = new JoystickButton(driver, XboxController.Button.kA.value);
-    private final JoystickButton elevatorPos2 = new JoystickButton(driver, XboxController.Button.kB.value);
+    private final JoystickButton zeroGyro = new JoystickButton(driver, 8  );
+    private final JoystickButton robotCentric = new JoystickButton(driver, 7);
+    private final JoystickButton elevatorPos1 = new JoystickButton(driver, 3);
+    private final JoystickButton elevatorPos2 = new JoystickButton(driver, 4);
 
     /* Subsystems */
     private final Swerve s_Swerve = new Swerve();
