@@ -1,13 +1,16 @@
 <xml version="1.0">
 <dashboard>
+	<widget field="Robocentric yes?" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="0" y="156"/>
+	</widget>
 	<widget field="Gyro Rate" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
-		<location x="0" y="516"/>
+		<location x="415" y="156"/>
 	</widget>
 	<widget field="Gyro Reading" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
-		<location x="0" y="496"/>
+		<location x="402" y="133"/>
 	</widget>
 	<widget field="Right Velocity" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
-		<location x="0" y="476"/>
+		<location x="-1" y="476"/>
 	</widget>
 	<widget field="Left Velocity" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
 		<location x="0" y="456"/>
@@ -64,17 +67,17 @@
 		<location x="186" y="10"/>
 	</widget>
 	<widget field="Mod 3 Velocity" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
-		<location x="24" y="136"/>
+		<location x="317" y="292"/>
 	</widget>
 	<widget field="Mod 1 Velocity" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
-		<location x="194" y="45"/>
+		<location x="318" y="249"/>
 	</widget>
 	<widget field="Mod 2 Integrated" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
 		<location x="184" y="134"/>
 		<height>19</height>
 	</widget>
 	<widget field="Mod 0 Integrated" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
-		<location x="8" y="29"/>
+		<location x="2" y="29"/>
 	</widget>
 	<widget field="Mod 2 Cancoder" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
 		<location x="188" y="94"/>
@@ -83,10 +86,10 @@
 		<location x="11" y="9"/>
 	</widget>
 	<widget field="Mod 2 Velocity" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
-		<location x="196" y="112"/>
+		<location x="317" y="269"/>
 	</widget>
 	<widget field="Mod 0 Velocity" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
-		<location x="19" y="54"/>
+		<location x="318" y="228"/>
 	</widget>
 	<widget field="Mod 3 Integrated" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
 		<location x="12" y="115"/>
